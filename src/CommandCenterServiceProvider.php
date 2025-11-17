@@ -20,6 +20,7 @@ class CommandCenterServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../resources/js/Layouts/CommandLayout.vue' => resource_path('js/Layouts/CommandLayout.vue'),
             __DIR__ . '/../resources/js/Components/command' => resource_path('js/Components/command'),
+            __DIR__ . '/../resources/js/Components/ui' => resource_path('js/Components/ui'),
             __DIR__ . '/../resources/js/Pages/Command' => resource_path('js/Pages/Command'),
         ], 'command-center-inertia');
 
