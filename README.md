@@ -37,6 +37,7 @@ The published `config/command-center.php` exposes the knobs you can tune:
 | `mysql_dump_binary` | Path to `mysqldump`. Leave as `mysqldump` if it’s on your `$PATH`. |
 | `file_roots` | Whitelist of directories/files that can be edited from the UI. Ship with config, routes, resources, app, and `.env`. |
 | `git.default_branch` | Default branch used when pulling via the Git tool. Defaults to `COMMAND_GIT_BRANCH` or `main`. |
+| `routes` | Control middleware, prefix, and route name prefix (defaults: middleware `['web','auth','verified']`, prefix `command`, name `command.`). |
 
 Set at least the master password in your `.env`:
 ```dotenv
@@ -54,13 +55,13 @@ Backups/restores currently target MySQL/MariaDB connections. The package tries `
 Routes load from `routes/web.php` under:
 
 ```php
-Route::middleware(['web', 'auth', 'verified'])
-    ->prefix('command')
-    ->as('command.')
+Route::middleware(config('command-center.routes.middleware'))
+    ->prefix(config('command-center.routes.prefix'))
+    ->as(config('command-center.routes.name'))
     ->group(base_path('vendor/madassdev/commander/routes/web.php'));
 ```
 
-If you need different middleware or a different prefix, register your own route group in your application service provider and point `group()` to the vendor route file.
+Adjust the middleware/prefix/name defaults in `config/command-center.php` to suit your application. For more control you can still register your own group pointing to the vendor route file.
 
 ## Usage
 Visit `/command` while authenticated. Each section enforces the master password + confirmation checkbox. Highlights:

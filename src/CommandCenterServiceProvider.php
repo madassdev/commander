@@ -2,7 +2,6 @@
 
 namespace Madassdev\Commander;
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 class CommandCenterServiceProvider extends ServiceProvider
@@ -29,9 +28,10 @@ class CommandCenterServiceProvider extends ServiceProvider
 
     protected function loadRoutes(): void
     {
-        Route::middleware(['web', 'auth', 'verified'])
-            ->prefix('command')
-            ->as('command.')
-            ->group(__DIR__ . '/../routes/web.php');
+        if ($this->app->routesAreCached()) {
+            return;
+        }
+
+        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
     }
 }

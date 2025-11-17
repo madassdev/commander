@@ -38,4 +38,10 @@ return [
     'git' => [
         'default_branch' => env('COMMAND_GIT_BRANCH', 'main'),
     ],
+
+    'routes' => [
+        'middleware' => ['web', 'auth', 'verified'],
+        'prefix' => 'command',
+        'name' => 'command.',
+    ],
 ];
