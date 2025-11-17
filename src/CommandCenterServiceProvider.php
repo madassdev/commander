@@ -1,6 +1,6 @@
 <?php
 
-namespace XpCommand\CommandCenter;
+namespace Madassdev\Commander;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;

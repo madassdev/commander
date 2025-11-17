@@ -1,6 +1,6 @@
 <?php
 
-namespace XpCommand\CommandCenter\Http\Controllers\Concerns;
+namespace Madassdev\Commander\Http\Controllers\Concerns;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;

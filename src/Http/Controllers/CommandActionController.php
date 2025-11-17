@@ -1,6 +1,6 @@
 <?php
 
-namespace XpCommand\CommandCenter\Http\Controllers;
+namespace Madassdev\Commander\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Schema;
-use XpCommand\CommandCenter\Http\Controllers\Concerns\HandlesCommandTools;
+use Madassdev\Commander\Http\Controllers\Concerns\HandlesCommandTools;
 
 class CommandActionController extends Controller
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace XpCommand\CommandCenter\Http\Controllers;
+namespace Madassdev\Commander\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 use Inertia\Inertia;
 use Inertia\Response;
-use XpCommand\CommandCenter\Http\Controllers\Concerns\HandlesCommandTools;
+use Madassdev\Commander\Http\Controllers\Concerns\HandlesCommandTools;
 
 class CommandCenterController extends Controller
 {
