@@ -8,7 +8,7 @@ Route::middleware(config('command-center.routes.middleware', ['web', 'auth', 've
     ->prefix(config('command-center.routes.prefix', 'command'))
     ->as(config('command-center.routes.name', 'command.'))
     ->group(function () {
-        Route::get('/', [CommandCenterController::class, 'overview'])->name('overview');
+        Route::get('/', [CommandCenterController::class, 'overview'])->name('index');
         Route::get('/artisan', [CommandCenterController::class, 'artisan'])->name('artisan');
         Route::get('/environment', [CommandCenterController::class, 'environment'])->name('environment');
         Route::get('/sql', [CommandCenterController::class, 'sql'])->name('sql');
