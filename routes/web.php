@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use XpCommand\CommandCenter\Http\Controllers\CommandActionController;
-use XpCommand\CommandCenter\Http\Controllers\CommandCenterController;
+use Madassdev\Commander\Http\Controllers\CommandActionController;
+use Madassdev\Commander\Http\Controllers\CommandCenterController;
 
 Route::get('/', [CommandCenterController::class, 'overview'])->name('overview');
 Route::get('/artisan', [CommandCenterController::class, 'artisan'])->name('artisan');
