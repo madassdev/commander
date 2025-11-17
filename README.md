@@ -52,13 +52,13 @@ COMMAND_GIT_BRANCH=production
 Backups/restores currently target MySQL/MariaDB connections. The package tries `mysqldump` first (respecting `MYSQL_PWD`) and falls back to a PHP-based export/import if the binary fails.
 
 ### Route security
-Routes load from `routes/web.php` under:
+Routes load from `routes/command.php` under:
 
 ```php
 Route::middleware(config('command-center.routes.middleware'))
     ->prefix(config('command-center.routes.prefix'))
     ->as(config('command-center.routes.name'))
-    ->group(base_path('vendor/madassdev/commander/routes/web.php'));
+    ->group(base_path('vendor/madassdev/commander/routes/command.php'));
 ```
 
 Adjust the middleware/prefix/name defaults in `config/command-center.php` to suit your application. For more control you can still register your own group pointing to the vendor route file.
