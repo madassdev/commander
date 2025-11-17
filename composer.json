@@ -1,0 +1,23 @@
+{
+    "name": "madassdev/commander",
+    "description": "Internal command center utilities.",
+    "type": "library",
+    "authors":[
+        {
+            "name": "Favour Olayinka",
+            "email": "favescsskr@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Madassdev\\Commander\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Madassdev\\Commander\\CommandCenterServiceProvider"
+            ]
+        }
+    }
+}
